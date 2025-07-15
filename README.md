@@ -1,12 +1,38 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Pages Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1) Venue Page 
+This is the main listing page that displays all sports venues in a responsive grid format.
 
-## Expanding the ESLint configuration
+Features:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Fetches venue data from `VenueContext`.
+* Displays venue name, image, rating, distance, sports, and price info.
+* Includes a **"Add to Favorite"** button for each venue.
+* Users can navigate to the **Venue Details** page by clicking on a venue.
+* Includes a button to view all favorite venues.
+
+2) Favorites Page
+This page displays only the venues marked as favorite by the user.
+
+Features:
+
+* Pulls the favorites list from `VenueContext`.
+* Allows users to **remove venues from favorites**.
+* Shows the same venue card design as on the Venue page.
+* Helps users quickly find and manage their preferred venues.
+
+3) Venue Details Page 
+This is a dynamic page that shows detailed information about a specific venue.
+
+Features:
+
+* Uses `useParams()` from React Router to get the venue `id` from the URL.
+* Finds the selected venue from `VenueContext`.
+* Displays:
+
+  * Venue image
+  * Name, address, distance, and rating
+  * List of available sports and their prices
+* If the venue is not found, displays an error message.
